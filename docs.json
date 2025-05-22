@@ -20,8 +20,9 @@
             "group": "Get Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "explainable-ai",
+              "black-box",
+              "transformers"
             ]
           },
           {
