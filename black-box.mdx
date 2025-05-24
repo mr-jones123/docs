@@ -1,5 +1,76 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Black-box"
+description: "The core of deep learning. "
 ---
 
+## Black Box vs. White Box Models
+
+In machine learning, models are often described as either **black box** or **white box**, depending on how interpretable their decision-making process is.
+
+### What is a Black Box Model?
+
+A **black box model** is a model where the internal logic is **too complex or opaque** to understand easily — even if you have access to the code and weights.
+
+Examples include:
+
+- **Deep Neural Networks** (e.g., CNNs, RNNs, Transformers)
+- \*\*Ensemble methods \*\*(e.g., Random Forests, Gradient Boosting)
+- Proprietary AI systems
+
+While these models often achieve **high accuracy**, they **lack transparency**, making them hard to trust, especially in critical applications. You know what goes in and what comes out, but **not why**.
+
+## What is a White Box Model?
+
+A **white box model** is **interpretable by design**. Its structure and parameters are simple enough that humans can **trace the logic** of predictions step by step.
+
+Examples include:
+
+- **Linear Regression**
+- **Logistic regression**
+- **Decision trees (small ones)**
+- **Rule-based models**
+
+These models are less powerful for complex tasks but are **transparent**, easier to debug, and **explainable without extra tools**.
+
+### Why Black Boxes Dominate in Deep Learning
+
+**Deep learning models** — like BERT, GPT, ResNet, and LSTMs — are black boxes because:
+
+- They consist of **many layers** of nonlinear transformations
+- Their learned features are **not human-readable**
+- Interpretability decreases as complexity increases
+
+Despite their opacity, they’re used in:
+
+- **NLP** (text classification, translation, chatbots)
+- **Computer vision** (image recognition, object detection)
+- **Speech processing**
+- Black Box vs. White Box Models
+
+  In machine learning, models are often described as either **black box** or **white box**, depending on how interpretable their decision-making process is.
+
+  ## The Problem with Black Boxes
+
+  Using black box models in production comes with challenges:
+  - **No visibility** into why a model made a decision
+  - **Hard to debug or audit**
+  - **Risk of biased or unfair behavior**
+  - **Non-compliance** with regulations requiring transparency (e.g., GDPR, AI Act)
+
+  For example, if an AI denies someone a loan or misclassifies a news article as “fake,” we need to understand **why**.
+
+  ---
+
+  ## How Explainable AI Helps
+
+  **Explainable AI (XAI)** refers to methods that make black box models **more interpretable**.
+
+  These tools don’t rewrite the model, but instead offer **post-hoc explanations**:
+  - **LIME**: Explains individual predictions by approximating the model locally with interpretable models
+  - **SHAP**: Calculates the contribution of each feature to a prediction using game theory
+  - **Attention maps**: Visualize what parts of the input the model focused on (common in NLP and vision)
+  - **Feature importance**: Ranks the input features based on how much they influenced the output
+
+  ---
+
+  ## 

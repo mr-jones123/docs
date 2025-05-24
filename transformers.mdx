@@ -1,5 +1,77 @@
 ---
-title: 'New file'
-description: 'Description of your new file.'
+title: "Transformers"
+description: "The architecture behind ChatGPT, Claude, BERT, etc. "
 ---
 
+##  What Are Transformers?
+
+**Transformers** are a type of deep learning architecture that has revolutionized the field of **natural language processing (NLP)** and beyond. Originally introduced in the paper _“Attention is All You Need”_ by Vaswani et al. (2017), the Transformer architecture allows models to process sequences of data (like text) **in parallel** and with better **context understanding** than previous models like RNNs or LSTMs.
+
+Popular models built on Transformers include:
+
+- **BERT** (Bidirectional Encoder Representations from Transformers)
+- **GPT** (Generative Pretrained Transformer)
+- **T5**, **RoBERTa**, and **DistilBERT**
+
+These models are widely used in:
+
+1. Fake news detection
+2.  Sentiment analysis
+3. Language translation
+4. Chatbots and generative AI (like ChatGPT)
+
+##  Why Transformers Matter
+
+Transformers solve a key problem in NLP: understanding the **context of each word in a sentence**, no matter how far apart the related words are.
+
+\> “The bank will not lend money during the storm.”  
+
+\> vs.  
+
+\> “The river overflowed the bank during the storm.”
+
+The word _“_**_bank_**_”_ means different things depending on context. Transformers help capture that nuance.
+
+## The Attention Mechanism
+
+The core innovation of Transformers is the **attention mechanism**. It lets the model decide **which words to focus on** when encoding a given word.
+
+**Self-attention** allows each word to look at other words in the sentence and assign a weight to them. For example:
+
+\> In the sentence: “The cat sat on the mat,”  
+
+\> The word **“sat”**will **pay more attention** to **“cat”** than **“mat”** when understanding the sentence structure.
+
+This is done using three vectors:
+
+- **Query**
+- **Key**
+- **Value**
+
+Each word gets transformed into these vectors, and the model computes attention weights by comparing the **Query** of a word with the **Keys** of all other words.
+
+These weights are used to generate a new representation of the word — one that is **context-aware**.
+
+##  Why Transformers Are Black Boxes
+
+Despite their power, Transformers are considered **black box models** because:
+
+- They contain **millions (even billions) of parameters**
+- The **attention weights**, while useful, are hard to interpret at scale
+- Understanding exactly **how a prediction was made** is often unclear
+-  Each layer transforms inputs in ways that are **not human-readable**
+
+So, while attention can give some insights, it doesn't fully explain a model’s reasoning — which is why tools like **LIME**, **SHAP**, or **attention visualizers** are used in **Explainable AI (XAI)**.
+
+\> A Transformer might predict that an article is “fake news,”  
+
+\> but without XAI, we don’t know if it’s because of a misleading headline, a biased source, or specific word choices.
+
+---
+
+## Connecting the Dots
+
+- **Fake News Detection**: Transformers (like BERT) can be fine-tuned to classify articles as _real_ or _fake_ based on their content.
+- **Explainable AI (XAI)**: Since Transformers are black boxes, we use tools like LIME and SHAP to explain their decisions.
+- **Dataset Balance**: Because these models are sensitive to training data, you need balanced datasets for fair and unbiased predictions.
+- **Ethics & Trust**: Especially in fake news classification, interpretability is crucial for building **trustworthy AI**.
