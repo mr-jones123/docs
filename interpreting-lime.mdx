@@ -1,0 +1,81 @@
+---
+title: "Interpreting LIME"
+description: "One of XAI's Algorithms"
+---
+
+## Interpreting Model Predictions with LIME
+
+One of the biggest challenges in modern machine learning, especially with models like **Transformers**, is that they often act as **black boxes**. We get predictions — but not reasons. That’s where **LIME** comes in.
+
+### What is LIME?
+
+**LIME** stands for **Local Interpretable Model-Agnostic Explanations**. It's an explainable AI technique that helps you understand **why a machine learning model made a specific prediction**.
+
+> You don’t open the entire model — you just zoom in on **one prediction** and try to explain that.
+
+It’s **model-agnostic**, which means:
+
+- It works with any kind of model (BERT, GPT, CNNs, random forests, etc.)
+- It doesn’t require access to internal model architecture — only inputs and outputs
+
+## How LIME Works
+
+Let’s break it down into steps using a **fake news classifier** as an example.
+
+### 🧠 Step 1: Choose a Prediction to Explain
+
+You have a trained Transformer-based fake news classifier.  
+
+You input this article:
+
+> _"The President announces miracle drug to cure all diseases."_
+
+The model says: **FAKE **(with 97% confidence)
+
+### 🔍 Step 2: Generate Perturbed Samples
+
+LIME takes that input and creates **hundreds of variations** by randomly:
+
+1. Removing words
+2. Masking phrases
+3. Shuffling some tokens
+
+Example perturbations:
+
+- _"President announces miracle drug cure diseases."_
+- _"The miracle drug to cure all diseases."_
+- _"The announces drug diseases."_
+
+Each of these is fed into the model to see how the prediction changes.
+
+---
+
+### 📊 Step 3: Create a Local Dataset
+
+Now we have:
+
+- A bunch of slightly changed texts (perturbations)
+- The model’s prediction for each
+
+This forms a **local dataset** around the original prediction.
+
+### 🧩 Step 4: Train a Simple Interpretable Model
+
+LIME trains a **simple, interpretable model** (like linear regression or decision tree) on this local dataset.
+
+Why?  Because **simple models are easy to interpret** — even if the original model (like BERT) is complex.
+
+### 🧠 Step 5: Highlight Important Features
+
+The simple model shows which words most affected the prediction.
+
+Example visualization:
+
+### Prediction: FAKE NEWS (97%)
+
+Top contributing features:
+
+- "miracle" ⬆ \+0.35
+- "cure" ⬆ \+0.27
+- "President" ⬆ \+0.12
+- "announces" ⬇ -0.05
