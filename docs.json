@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "Mint Starter Kit",
+  "name": "XeeAI Docs",
   "theme": "mint",
   "colors": {
     "primary": "#eff6ff",
@@ -10,7 +10,7 @@
   "fonts": {
     "family": "Inter"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "favicon.ico",
   "navigation": {
     "tabs": [
       {
